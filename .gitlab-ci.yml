@@ -1,5 +1,5 @@
 before_script:
-  - apt-get update && apt-get install nodejs
+  - apt-get -qq update && apt-get -qq install nodejs
   - npm install @angular/cli yarn -g
 
 build:
