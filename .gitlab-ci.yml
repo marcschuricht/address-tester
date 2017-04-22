@@ -1,7 +1,7 @@
 before_script:
   - apt-get -qq update && apt-get -qq install npm
   - npm install --global yarn
-  - yarn add angular-cli
+  - npm install -g @angular/cli
 build:
   stage: build
   script:
