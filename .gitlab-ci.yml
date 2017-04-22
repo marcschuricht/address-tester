@@ -1,8 +1,8 @@
 before_script:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-  - apt-get remove docker docker-engine
+  - apt-get -qq remove docker docker-engine
   - apt-get -qq update
-  - apt-get install docker-ce
+  - apt-get -qq install docker-ce
 build:
   stage: build
   script:
