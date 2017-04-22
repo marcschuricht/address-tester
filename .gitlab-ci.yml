@@ -1,6 +1,6 @@
 before_script:
   - apt-get -qq update && apt-get -qq install npm
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - npm install --global yarn
   - npm install @angular/cli yarn -g
 build:
   stage: build
