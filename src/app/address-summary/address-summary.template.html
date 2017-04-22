@@ -1,0 +1,23 @@
+<table style="width: 100%">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Line 1</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of view.addressSummaryItems | async">
+      <td>{{item.id}}</td>
+      <td>{{item.line1}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.state}}</td>
+      <td>{{item.zipCode}}</td>
+    </tr>
+  </tbody>
+<tfoot>
+<button (click)="CreateNew()">Create New</button>
+</tfoot>
+</table>

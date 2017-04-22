@@ -1,0 +1,10 @@
+before_script:
+  - npm install @angular/cli yarn -g
+
+build:
+  stage: build
+  script:
+    - yarn install
+    - ng build
+    - docker build -t test .
+
