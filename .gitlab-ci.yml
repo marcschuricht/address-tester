@@ -1,7 +1,6 @@
 before_script:
   - apt-get -qq update && apt-get -qq install npm
-  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee -i /etc/apt/sources.list.d/yarn.list
-  - apt-get -qq install yarn
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
   - npm install @angular/cli yarn -g
 build:
   stage: build
