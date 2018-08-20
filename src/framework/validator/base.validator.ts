@@ -1,7 +1,7 @@
 import { ForEachCommentCallback } from 'tslint/lib';
 import { ValidationRule } from './rule/cannot-exceed-length.rule';
 export abstract class BaseValidator<T> {
-  abstract Rules: Array<ValidationRule<T>>;
+  Rules: Array<ValidationRule<T>>;
   ValidationErrors: Array<string> = [];
   /**
    *

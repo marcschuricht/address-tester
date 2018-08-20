@@ -1,6 +1,5 @@
 import { RawAddress } from './../../framework/transfer/raw/address.raw';
 import { CreateAddressAction } from './../../framework/controller/action/address/create-address.action';
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AddressSummaryViewCreator } from '../../framework/controller/view-creator/address-summary/address-summary.viewCreator';
 import { AddressSummaryView } from '../../framework/transfer/view/address-summary/address-summary.view';

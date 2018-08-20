@@ -1,10 +1,30 @@
-before_script:
-  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-  - apt-get -qq remove docker docker-engine
-  - apt-get -qq update
-  - apt-get -qq install docker-ce
-build:
-  stage: build
+image: node
+stages:
+  - test
+  - build
+  - deploy
+testJS:
+  stage: test
   script:
-    - docker build -t test .
+    - yarn
+    - npm run test
+    - npm run e2e
+buildJS:
+  stage: build
+  artifacts:
+    paths:
+      - _site/  # This is what we want to publish, replace with your `dist` directory
+
+  script:
+    - npm run build
+
+deployApp:
+  image: "python:latest"
+  stage: deploy
+  dependencies:
+    - buildJS
+  before_script:
+    - pip install awscli # Install the SDK
+  script:
+    - aws s3 cp _site s3://${BUCKET_NAME}/${CI_COMMIT_REF_SLUG} --recursive # Replace example-bucket with your bucket
 
